@@ -19,7 +19,7 @@
 */
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 /*
@@ -30,6 +30,7 @@ body {
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-image: linear-gradient(var(--SOFT-VIOLET), var(--SOFT-BLUE));
 }
 
 /*
@@ -90,4 +91,181 @@ h6 {
 
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 12px;
+}
+
+.main-container {
+    width: 88%;
+    margin-inline: auto;
+    margin-block: 12.8rem 6rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 2.5rem 5rem 0.2rem rgba(53, 0, 83, 0.5);
+}
+
+.image-section {
+    position: relative;
+    height: 34vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-layer,
+.main-layer {
+    position: absolute;
+    width: 76%;
+    height: auto;
+}
+
+.bottom-layer {
+    top: 0;
+}
+
+.main-layer {
+    top: -90%;
+}
+
+.top-layer {
+    display: none;
+}
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem 7% 12% 7%;
+}
+
+.faq {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--VERY-DARK-DESATURATED-BLUE);
+    margin-bottom: 1.1rem;
+}
+
+.faq-wrapper {
+    list-style: none;
+    padding: 0 0 4rem 0;
+}
+
+.faq-wrapper li {
+    border-bottom: 1px solid var(--LIGHT-GRAYISH-BLUE);
+}
+
+label {
+    font-size: 1.12rem;
+    color: var(--VERY-DARK-GRAYISH-BLUE);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.2rem 1.2rem;
+}
+
+input {
+    display: none;
+}
+
+input[type="radio"]+label:hover {
+    color: var(--SOFT-RED);
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+label {
+    color: black;
+    font-size: 1.17;
+    font-weight: 700;
+    padding-block: 1.2rem 0.6rem;
+}
+
+input[type="radio"]:checked+label svg {
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+}
+
+input[type="radio"]+label+.answer {
+    visibility: hidden;
+    overflow: hidden;
+    max-height: 0;
+    color: var(--DARK-GRAYISH-BLUE);
+    transition: max-height 0.5s;
+}
+
+input[type="radio"]:checked+label+.answer {
+    visibility: visible;
+    max-height: 500px;
+    transition: 0.5s;
+    padding-bottom: 1.46rem;
+}
+
+.answer {
+    font-size: 1.06rem;
+}
+
+@media screen and (min-width: 601px) {
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 67.3%;
+        margin: 0;
+    }
+
+    .image-section {
+        background: url(images/illustration-woman-online-desktop.svg) right center/121% no-repeat,
+            url(images/bg-pattern-desktop.svg) right 60%/233% no-repeat;
+        height: clamp(20rem, 42.49rem, 60rem);
+        width: 42.2%;
+    }
+
+    .bottom-layer,
+    .main-layer {
+        display: none;
+    }
+
+    .top-layer {
+        display: block;
+        position: absolute;
+        left: -7.75rem;
+        bottom: 9.6rem;
+        transition: 0.5s;
+    }
+
+    .top-layer>svg {
+        filter: drop-shadow(0 2rem 0.6rem rgb(53, 0, 83, 0.15));
+    }
+
+    .text-section {
+        align-items: flex-start;
+        padding: 1.86rem 7% 0 9.4%;
+        width: 57.8%;
+    }
+
+    .main-container:hover .image-section .top-layer {
+        left: -10.9rem;
+    }
+
+    .faq {
+        margin-bottom: 1.34rem;
+        font-size: 2.75rem;
+    }
+
+    .faq-wrapper {
+        max-width: 91%;
+    }
+
+    label svg {
+        margin-right: 1.2rem;
+    }
 }
